@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jigsaw Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🧩 Jigsaw Puzzle</h1>
+<div id="hud">
+    ⏱ Time: <span id="timer">00:00</span>
+</div>
+<canvas id="puzzleCanvas" width="600" height="600"></canvas>
+<br>
+<button id="finishButton">Finish</button>
+<button id="refreshButton">🔄 New Puzzle</button>
+
+
+<div id="resultOverlay">
+    <div id="successOverlay" class="overlay-content">
+        <div class="resultBox successBox">
+            🎉 Puzzle Completed! 🎉
+            <p>Great job! You solved the puzzle correctly!</p>
+            <button onclick="location.reload()">Play Again</button>
+        </div>
+    </div>
+    <div id="failureOverlay" class="overlay-content">
+        <div class="resultBox failureBox">
+            ❌ Puzzle Not Complete ❌
+            <p>Some pieces are not in the correct position. Keep trying!</p>
+            <button onclick="closeResult()">Continue</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
