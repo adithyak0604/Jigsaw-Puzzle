@@ -1,0 +1,150 @@
+body {
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    border: 3px solid #00ff99;
+    margin-top: 10px;
+    cursor: grab;
+}
+
+canvas:active {
+    cursor: grabbing;
+}
+
+#finishButton {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: #00ff99;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#finishButton:hover {
+    background: #00cc7a;
+    transform: scale(1.05);
+}
+
+#finishButton:active {
+    transform: scale(0.98);
+}
+
+#resultOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 10;
+}
+
+#resultOverlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay-content {
+    display: none;
+}
+
+.overlay-content.show {
+    display: block;
+}
+
+.resultBox {
+    background: #111;
+    padding: 40px 60px;
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    transform: scale(0.7);
+    animation: pop 0.5s ease forwards;
+}
+
+.successBox {
+    color: #00ff99;
+    border: 3px solid #00ff99;
+}
+
+.failureBox {
+    color: #ff4444;
+    border: 3px solid #ff4444;
+}
+
+.resultBox p {
+    font-size: 18px;
+    color: white;
+    margin: 10px 0 20px;
+}
+
+.resultBox button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.successBox button {
+    background: #00ff99;
+    color: black;
+}
+
+.successBox button:hover {
+    background: #00cc7a;
+}
+
+.failureBox button {
+    background: #ff4444;
+    color: white;
+}
+
+.failureBox button:hover {
+    background: #cc0000;
+}
+
+@keyframes pop {
+    to { transform: scale(1); }
+}
+
+#hud {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00ff99;
+    font-weight: bold;
+}
+#refreshButton {
+    margin-left: 15px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: #ffaa00;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#refreshButton:hover {
+    background: #e69900;
+    transform: scale(1.05);
+}
+
+#refreshButton:active {
+    transform: scale(0.98);
+}
